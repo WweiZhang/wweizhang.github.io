@@ -3,7 +3,7 @@ layout: post
 title: 'hello world'
 date: 2018-05-04
 author: wweizhang
-cover: '../assets/img/hero.jpg'
+cover: '/assets/img/hero.jpg'
 tags: jekyll
 ---
 
