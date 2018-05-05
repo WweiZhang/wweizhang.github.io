@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 'hello world'
-date: 2018-05-04
+title: 'linux shell检查用户权限'
+date: 2018-05-05
 author: wweizhang
 cover: '/assets/img/girl.jpg'
-tags: jekyll
+tags: linux
 ---
 
 > linux shell脚本
