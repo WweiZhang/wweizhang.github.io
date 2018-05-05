@@ -3,7 +3,7 @@ layout: post
 title: 'hello world'
 date: 2018-05-04
 author: wweizhang
-cover: '/assets/img/hero.jpg'
+cover: '/assets/img/girl.jpg'
 tags: jekyll
 ---
 
@@ -13,7 +13,7 @@ tags: jekyll
 
 **题目！**
 
-![avatar](ti.png)
+![avatar](/assets/img/ti.png)
 
 ## 下面是题目要求检查的
 
