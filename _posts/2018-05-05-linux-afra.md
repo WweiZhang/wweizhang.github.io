@@ -44,15 +44,71 @@ chown -R alice.grp01 /var/tmp/fstab
 ```linux
 #File Name: cheak.sh
 
-if alice -u $1 >/dev/null 2>&2>&1; then
-  echo "alice exists"
-else
-  echo "alice does not exists"
-fi
+#!/bin/bash
+echo "**************************"
+echo "* 选项:"
+echo "* 1:检查用户及属组"
+echo "* 2:检查fstab是否成功复制"
+echo "* 3:检查fstab所属组"
+echo "* 4:检查fstab权限"
+echo "* 5:检查acl配置"
+echo "**************************"
+read -p "请选择：" option
 
-if [ -d "/var/tmp" ]; then
-  echo "复制失败"
-fi
+case "$option" in
+        1)
+                group_alice=$( groups alice )
+                group_bob=$( groups bob )
+                echo $group_alice
+                echo $group_bob 
+                if [[ ${group_alice##* } = 'grp01' ]] && [[ ${group_bob##* } = 'grp01' ]]
+                then
+                        echo "OK!"
+                else
+                        echo "NO!"
+                fi
+        ;;
+        2)
+                filename=$( ls /var/tmp | grep "fstab" )
+                if [[ $filename = 'fstab' ]]
+                then
+                        echo "/var/tmp/$filename"
+                        echo "OK!"
+                else
+                        echo "NO!"
+                fi
+        ;;
+        3)
+                fileinf=$( ll -g /var/tmp/fstab )
+                echo ${fileinf:14:5}
+                if [[ ${fileinf:14:5} = 'grp01' ]]
+                then
+                        echo "OK!"
+                else
+                        echo "NO!"
+                fi
+        ;;
+        4)
+                echo "user:${fileinf:1:3} group:${fileinf:4:3} others:${fileinf:7:3}"
+              if [[ ${fileinf:3:1} = 'x' ]] && [[ ${fileinf:6:1} = '-' ]] && [[ ${fileinf:9:1} = '-' ]]
+                then
+                        echo "OK!"
+                else
+                        echo "NO!"
+                fi
+        ;;
+        5)
+                fileacl_alice=$( getfacl /var/tmp/fstab | grep "alice" )
+                fileacl_bob=$( getfacl /var/tmp/fstab | grep "bob" )
+                echo $fileacl_alice
+                echo $fileacl_bob
+                if [[ ${fileacl_alice##*:} = 'rw-' ]] && [[ ${fileacl_bob##*:} = '---' ]]
+                then
+                        echo "OK!"
+                else
+                        echo "NO!"
+                fi
+        ;;
+esac
 ```
-### 因为刚开始写脚本，还不太懂，今天就只检查了用户是否存在和是否复制成功，明日继续跟进！
 
