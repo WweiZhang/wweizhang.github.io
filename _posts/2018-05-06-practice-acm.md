@@ -11,7 +11,7 @@ tags: algorithm
 
 **这是今天比赛的题目，来自第四届福建程序设计大赛**
 
-[题目链接](http://acm.fzu.edu.cn/problem.php?pid=2141)
+[Sub-Bipartite Graph](http://acm.fzu.edu.cn/problem.php?pid=2141)
 
 #### 大概意思是说有t组样例，然后n个点（从1-n），m条边，再给出m条边的两边的点，组成一个无向图。要将这些点分为两个组，构成二分图，保证二分图的边至少m/2条边。
 
@@ -30,7 +30,7 @@ tags: algorithm
     2 3
     1 3
 ```
- ##### Sample Output
+##### Sample Output
 ```
     1 1
     0
