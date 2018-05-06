@@ -7,49 +7,37 @@ cover: '/assets/img/girl.jpg'
 tags: algorithm
 ---
 
-> 贪心
+> 日常比赛
 
 **这是今天比赛的题目，来自第四届福建程序设计大赛**
 
-http://acm.fzu.edu.cn/problem.php?pid=2141
+[题目链接](http://acm.fzu.edu.cn/problem.php?pid=2141)
 
 ### 大概意思是说有t组样例，然后n个点（从1-n），m条边，再给出m条边的两边的点，组成一个无向图。要将这些点分为两个组，构成二分图，保证二分图的边至少m/2条边。
 
 ###  思考：对于第i个点，假设前i-1个点已经成为一个二分图，就查看与i相连的点是在二分图左边多还是在二分图右边多，哪边少i点就往哪放。先用一个二维数组grp[][]来保存两个点之间是否有连线，color[]来记录点分到哪个组了,没有任何连线点默认分到第一组。最后注意所有变量在每一组数据输入之前都应该初始化，特别是全局变量！
 
 * 这是一组样例
-* Sample Input
 
-    3
-
-    1 0
-
+##### Sample Input
+    3 1
+    1 0 
     2 1
-
     1 2
-
     3 3
-
     1 2
-
     2 3
-
     1 3
 
- * Sample Output
-
+ ##### Sample Output
     1 1
-
     0
-
     1 1
-
     1 2
-
     2 1 2
-
     1 3
 
+### 附上代码
 ```
 #include <iostream>
 #include <string>
