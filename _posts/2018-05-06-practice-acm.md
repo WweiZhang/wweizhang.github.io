@@ -20,6 +20,7 @@ tags: algorithm
 #### 这是一组样例
 
 ##### Sample Input
+```
     3 1
     1 0 
     2 1
@@ -28,13 +29,16 @@ tags: algorithm
     1 2
     2 3
     1 3
+```
  ##### Sample Output
+```
     1 1
     0
     1 1
     1 2
     2 1 2
     1 3
+```
 #### 附上代码
 
 
