@@ -3,7 +3,7 @@ layout: post
 title: 'md常用语法'
 date: 2018-05-08
 author: wweizhang
-cover: '/assets/img/girl.jpg'
+cover: '/assets/img/star.jpg'
 tags: Markdown
 ---
 
