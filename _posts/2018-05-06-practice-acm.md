@@ -3,7 +3,7 @@ layout: post
 title: '贪心'
 date: 2018-05-06
 author: wweizhang
-cover: '/assets/img/1.jpg'
+cover: ''
 tags: algorithm
 ---
 

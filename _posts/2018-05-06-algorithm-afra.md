@@ -3,7 +3,7 @@ layout: post
 title: 'DFS & BFS'
 date: 2018-05-06
 author: wweizhang
-cover: '/assets/img/girl.jpg'
+cover: ''
 tags: algorithm
 ---
 
